@@ -39,7 +39,7 @@ void main() {
       when(mockAddressByCepRepository.getAddressByCep(tCep))
           .thenAnswer((_) async => Right(tAddress));
       //act
-      final result = await usecase.execute(cep: tCep);
+      final result = await usecase(Params(cep: tCep));
       //assert
       expect(result, Right(tAddress));
       verify(mockAddressByCepRepository.getAddressByCep(tCep));
