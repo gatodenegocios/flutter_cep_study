@@ -4,7 +4,7 @@
 
 import 'dart:async' as _i4;
 
-import 'package:flutter_cep_study/core/platform/network_info.dart' as _i6;
+import 'package:flutter_cep_study/core/network/network_info.dart' as _i6;
 import 'package:flutter_cep_study/features/adress_by_cep/data/datasources/address_local_data_source.dart'
     as _i5;
 import 'package:flutter_cep_study/features/adress_by_cep/data/datasources/address_remote_data_source.dart'

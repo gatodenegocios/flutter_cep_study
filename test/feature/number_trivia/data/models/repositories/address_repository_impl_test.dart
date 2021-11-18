@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_cep_study/core/error/exceptions.dart';
 import 'package:flutter_cep_study/core/error/failures.dart';
-import 'package:flutter_cep_study/core/platform/network_info.dart';
+import 'package:flutter_cep_study/core/network/network_info.dart';
 import 'package:flutter_cep_study/features/adress_by_cep/data/datasources/address_remote_data_source.dart';
 import 'package:flutter_cep_study/features/adress_by_cep/data/datasources/address_local_data_source.dart';
 import 'package:flutter_cep_study/features/adress_by_cep/data/models/address_model.dart';
