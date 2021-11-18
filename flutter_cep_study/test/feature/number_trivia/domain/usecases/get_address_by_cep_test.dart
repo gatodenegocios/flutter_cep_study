@@ -36,7 +36,7 @@ void main() {
     'should get address for the address by cep repository',
     () async {
       //arrange
-      when(mockAddressByCepRepository.getAddressByCep(tCep))
+      when(mockAddressByCepRepository.getAddressByCep(any))
           .thenAnswer((_) async => Right(tAddress));
       //act
       final result = await usecase(Params(cep: tCep));
