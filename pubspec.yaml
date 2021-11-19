@@ -23,7 +23,7 @@ dependencies:
   # Service locator
   get_it: ^2.0.1
   # Bloc for state management
-  flutter_bloc: ^0.21.0
+  flutter_bloc: ^8.0.0
   # Value equality
   equatable: ^2.0.3
   # Functional programming thingies
@@ -33,7 +33,7 @@ dependencies:
   #connectivity: ^0.4.3+7
   http: ^0.13.4
   # Local cache
-  shared_preferences: ^0.5.3+4
+  shared_preferences: ^2.0.8
 
 
 
