@@ -6,6 +6,7 @@ import 'dart:async' as _i5;
 
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:flutter_cep_study/core/error/failures.dart' as _i6;
+import 'package:flutter_cep_study/core/utils/input_validator.dart' as _i8;
 import 'package:flutter_cep_study/features/adress_by_cep/domain/entities/address.dart'
     as _i7;
 import 'package:flutter_cep_study/features/adress_by_cep/domain/repositories/address_by_cep_repository.dart'
@@ -47,6 +48,23 @@ class MockGetAddressByCep extends _i1.Mock implements _i4.GetAddressByCep {
               returnValue: Future<_i3.Either<_i6.Failure, _i7.Address>>.value(
                   _FakeEither_1<_i6.Failure, _i7.Address>()))
           as _i5.Future<_i3.Either<_i6.Failure, _i7.Address>>);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [InputValidator].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockInputValidator extends _i1.Mock implements _i8.InputValidator {
+  MockInputValidator() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.Either<_i6.Failure, String> validate(String? str) =>
+      (super.noSuchMethod(Invocation.method(#validate, [str]),
+              returnValue: _FakeEither_1<_i6.Failure, String>())
+          as _i3.Either<_i6.Failure, String>);
   @override
   String toString() => super.toString();
 }

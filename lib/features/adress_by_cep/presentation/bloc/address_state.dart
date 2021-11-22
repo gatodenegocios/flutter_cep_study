@@ -7,21 +7,21 @@ abstract class AddressState extends Equatable {
   List<Object> get props => [];
 }
 
-class Empty extends AddressState {}
-class Loading extends AddressState {}
-class Loaded extends AddressState {
+class EmptyState extends AddressState {}
+class LoadingState extends AddressState {}
+class LoadedState extends AddressState {
   final Address address;
 
-  Loaded({required this.address});
+  LoadedState({required this.address});
 
   @override
   List<Object> get props => [address];
 }
 
-class Error extends AddressState{
+class ErrorState extends AddressState{
   final String message;
 
-  Error({required this.message});
+  ErrorState({required this.message});
 
   @override
   List<Object> get props => [message];
