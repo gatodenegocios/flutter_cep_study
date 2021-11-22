@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'injection_container.dart' as di; 
+import 'package:flutter_cep_study/features/adress_by_cep/presentation/pages/address_page.dart';
+import 'package:flutter_cep_study/initial_configs.dart';
+import 'injection_container.dart' as di;
 
 void main() async {
-  await di.init;
-  runApp(const MyApp());
+  await initialConfigs();
+  await di.init();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter',
+      title: 'Address',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Container(), //const MyHomePage(),
+        primaryColor: Colors.green.shade800,
+       ),
+      home: AddressPage(),
     );
   }
 }

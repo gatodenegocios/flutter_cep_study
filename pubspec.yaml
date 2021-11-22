@@ -21,7 +21,7 @@ dependencies:
     sdk: flutter
 
   # Service locator
-  get_it: ^2.0.1
+  get_it: ^7.2.0
   # Bloc for state management
   flutter_bloc: ^8.0.0
   # Value equality
@@ -34,6 +34,11 @@ dependencies:
   http: ^0.13.4
   # Local cache
   shared_preferences: ^2.0.8
+  #fonts
+  google_fonts: ^2.1.0
+  #loading animations
+  flutter_spinkit: ^5.1.0
+
 
 
 

@@ -8,7 +8,6 @@ import 'package:flutter_cep_study/features/adress_by_cep/domain/usecases/get_add
 part 'address_event.dart';
 part 'address_state.dart';
 
-
 //todo localize
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
 const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
@@ -19,42 +18,44 @@ class AddressBloc extends Bloc<AddressEvent, AddressState> {
   final GetAddressByCep getAddress;
   final InputValidator validator;
 
-   
-
-  AddressBloc({required this.getAddress, required this.validator}) : super(EmptyState()) {
-    on<AddressEvent>((event, emit) {
-      if(event is GetAddressByCepEvent){
-        
+  AddressBloc({required this.getAddress, required this.validator})
+      : super(EmptyState()) {
+    on<AddressEvent>((event, emit) async {
+      if (event is GetAddressByCepEvent) {
         final inputEither = validator.validate(event.cepString);
 
         
 
-
         inputEither.fold(
-          (failure){
-            return ErrorState(message:INVALIDE_INPUT_FAILURE_MESSAGE);
+          (failure) {
+            emitState (ErrorState(message: INVALIDE_INPUT_FAILURE_MESSAGE));
           },
-          (string) async  {
-            emit(LoadingState());
+          (string) async {
+            emitState(LoadingState());
+            
             final failureOrAddress = await getAddress(Params(cep: string));
 
             failureOrAddress.fold(
               (failure){
-                emit(ErrorState(message: _mapFailureToMessage(failure)));
+                emitState(ErrorState(message: _mapFailureToMessage(failure)));
               },
               (address){
-                emit(LoadedState(address: address));
+                emitState(LoadedState(address: address));
               }
             );
-
+            
           },
         );
       }
-    }); 
+    });
   }
 
-    String _mapFailureToMessage(Failure failure){
-    switch(failure.runtimeType){
+  emitState(AddressState state){
+    emit(state);
+  }
+
+  String _mapFailureToMessage(Failure failure) {
+    switch (failure.runtimeType) {
       case ServerFailure:
         return SERVER_FAILURE_MESSAGE;
       case CacheFailure:
@@ -63,6 +64,4 @@ class AddressBloc extends Bloc<AddressEvent, AddressState> {
         return 'Unexpected error';
     }
   }
-
-
 }
