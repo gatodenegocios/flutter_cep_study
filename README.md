@@ -1,16 +1,9 @@
-# flutter_cep_study
+# Flutter Cep Stury
 
-A new Flutter project.
+A Clean Architeture Study.
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+This project is a Clean Architeture study implemented in a flutter aplication.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+It was made using the [*Learn Flutter Clean Architecture & TDD - Full Course*](https://www.youtube.com/watch?v=dc3B_mMrZ-Q) videos tutorial as base and adapted for the project theme and the project version, sice the video was made with a old version on flutter, a lot of resources needed to be adapted.
