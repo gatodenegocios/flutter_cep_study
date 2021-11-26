@@ -1,4 +1,4 @@
-# Flutter Cep Stury
+# Flutter Cep Study
 
 A Clean Architeture Study.
 
